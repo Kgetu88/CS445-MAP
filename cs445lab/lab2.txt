@@ -1,0 +1,22 @@
+Modern Web Browser
+The functionality of a browser is that provides a way to look at and
+ interact with all the information on the World Wide Web.
+ 
+The modern web browsers designed in combination of 
+1	Cascading Style Sheet (CSS): which is for styling and lay out the web
+2	Hyper Text Markup Language (HTML): which is used to define 
+     the structure and semantics of the web page.
+3	JavaScript: which is used for making the web page interactive (dynamic/live).
+
+ Currently web browsers are multi process browser (they execute multi tasks simultaneously).
+ When web browsers are operating (working), they follow those steps 
+1.	Handling user input: 
+2.	Sending a URL request
+3.	Preparing a renderer process
+4.	Committing navigation
+5.	Rendering page
+
+ JavaScript engine optimizes execution of JavaScript code by 
+1	 Standard interpreter: Compilation and running are the same time (just -in-time compiler).
+2	 Automatic garbage collation (unreachable variable or data removing)
+3	Callstack calls a function from the memory heap and after executing removes it from the stack.
