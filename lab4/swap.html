@@ -5,21 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swap page</title>
+    <title>Swap pag</title>
+
+
 </head>
 
 <body>
-
-
-    <button type="button" onclick="ShowPicture()">Swap</button>
-
-
-    </form>
+    <div style="border: 2px solid blue; width:100px; height:80px;color: chocolate;">
+        <img id="im1" onmouseover="setNewImage()" onmouseout="setOldImage()" src="/lab4/img/" width="80px"
+            type="button">Swap
+    </div>
     <script>
-        function ShowPicture() {
-            location.assign("/lab4/swap1.html");
+        function setNewImage() {
+
+            document.getElementById("im1").src = "/lab4/img/pet2.jpg"
+
+        }
+
+        function setOldImage() {
+            document.getElementById("im1").src = "/lab4/img/pet sleep.jpg";
+
         }
     </script>
+
 
 
 </body>
