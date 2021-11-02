@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+
+<body>
+
+    <form id="form" action="#">
+        First Value
+        <input type="number" id="firstValue" value=" " /><br></br>
+        Second Value
+        <input type="number" id="secondValue" value=" " /><br></br>
+
+        <input type="submit" value="submit" />
+    </form>
+    <script>
+        document.getElementById("form").onsubmit = function () {
+            let input1 = +document.getElementById("firstValue").value;
+            let input2 = +document.getElementById("secondValue").value;
+
+            document.getElementById("secondValue").value = input2 + input1;
+
+        }
+    </script>
+</body>
+
+
+
+</html>

@@ -25,12 +25,14 @@ type bankAccount = {
     money: number,
     deposit(value: number): void;
 };
+
 let bankAccount = {
     money: 2000,
     deposit(value: number) {
         this.money += value;
     }
 }
+
 
 type myself = {
     name: string,
@@ -48,7 +50,33 @@ let myself = {
 myself.bankAccount.deposit(3000);
 console.log(myself.bankAccount.money);
 console.log(myself);
+/////////////////////////////////////
+//OR
+let bankAccount2: {
+    money: number,
+    deposit(value: number): void;
+} = {
+    money: 2000,
+    deposit(value: number) {
+        this.money += value;
+    }
+}
 
+
+let myself2: {
+    name: string,
+    bankAccount2: typeof bankAccount2,
+    hobbies: string[];
+} = {
+    name: "John",
+    bankAccount2: bankAccount2,
+    hobbies: ["Violin", "Cooking"]
+};
+
+myself2.bankAccount2.deposit(5000);
+console.log("this is the second option ");
+console.log(myself2.bankAccount2.money);
+console.log(myself2);
 
 
 
@@ -57,12 +85,11 @@ Re-write the following code using TypeScript Class syntax. Try to be as explicit
 
 
 class Car {
-    name: string;
-    acceleration: number;
+    // name: string;
+    // acceleration: number;
 
-    constructor(name: string) {
-        this.name = name;
-        this.acceleration = 0;
+    constructor(public name: string, public acceleration: number = 0) {
+
     }
     honk() {
         console.log(` ${this.name} is saying: Toooooooooot!`);
@@ -88,18 +115,18 @@ Re-write the following code using TypeScript Class syntax. Try to be as explicit
 
  */
 
-type baseObject = {
+let baseObject: {
     width: number,
     length: number
 
-};
-let baseObject = {
+} = {
     width: 0,
     length: 0,
 };
 
 
-let rectangle = Object.create(baseObject);
+
+let rectangle: any = Object.create(baseObject);
 
 rectangle.width = 5;
 rectangle.length = 20;
@@ -109,3 +136,21 @@ rectangle.calcSize = function () {
 };
 
 console.log(rectangle.calcSize());
+//or
+interface shap {
+    width: number;
+    length: number;
+    calaAraea(): number;
+}
+
+class rect implements shap {
+
+
+    constructor(public width: number, public length: number) {
+
+    }
+
+    calaAraea(): number {
+        return this.width * this.length;
+    }
+}

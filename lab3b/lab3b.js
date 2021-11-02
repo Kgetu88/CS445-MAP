@@ -25,12 +25,32 @@ var myself = {
 myself.bankAccount.deposit(3000);
 console.log(myself.bankAccount.money);
 console.log(myself);
+/////////////////////////////////////
+//OR
+var bankAccount2 = {
+    money: 2000,
+    deposit: function (value) {
+        this.money += value;
+    }
+};
+var myself2 = {
+    name: "John",
+    bankAccount2: bankAccount2,
+    hobbies: ["Violin", "Cooking"]
+};
+myself2.bankAccount2.deposit(5000);
+console.log("this is the second option ");
+console.log(myself2.bankAccount2.money);
+console.log(myself2);
 /* Exercise 03
 Re-write the following code using TypeScript Class syntax. Try to be as explicit as possible and add Types to everything you can. When you are done, transpile the TS code to JS code and inspect the JS code.*/
 var Car = /** @class */ (function () {
-    function Car(name) {
+    // name: string;
+    // acceleration: number;
+    function Car(name, acceleration) {
+        if (acceleration === void 0) { acceleration = 0; }
         this.name = name;
-        this.acceleration = 0;
+        this.acceleration = acceleration;
     }
     Car.prototype.honk = function () {
         console.log(" " + this.name + " is saying: Toooooooooot!");
@@ -47,6 +67,11 @@ car.accelerate(60);
 car.accelerate(60);
 car.accelerate(60);
 console.log(car.acceleration);
+/**
+ * ## Exercise 04
+Re-write the following code using TypeScript Class syntax. Try to be as explicit as possible and add Types to everything you can. When you are done, transpile the TS code to JS code and inspect the JS code.
+
+ */
 var baseObject = {
     width: 0,
     length: 0
@@ -58,3 +83,13 @@ rectangle.calcSize = function () {
     return this.width * this.length;
 };
 console.log(rectangle.calcSize());
+var rect = /** @class */ (function () {
+    function rect(width, length) {
+        this.width = width;
+        this.length = length;
+    }
+    rect.prototype.calaAraea = function () {
+        return this.width * this.length;
+    };
+    return rect;
+}());
