@@ -11,20 +11,20 @@
 </head>
 
 <body>
-    <div style="border: 2px solid blue; width:100px; height:80px;color: chocolate;">
-        <img id="im1" onmouseover="setNewImage()" onmouseout="setOldImage()" src="/lab4/img/" width="80px"
-            type="button">Swap
+
+    <img id="im1" src="/lab4/img/" width="200px" alt="none">
+    <button id="up">Swap</button>
+
     </div>
     <script>
-        function setNewImage() {
 
-            document.getElementById("im1").src = "/lab4/img/pet2.jpg"
-
+        let swapup = document.getElementById("up");
+        let swapdown = document.getElementById("down");
+        swapup.onmouseover = function () {
+            document.getElementById("im1").src = "/lab4/img/pet2.jpg";
         }
-
-        function setOldImage() {
+        swapup.onmouseout = function () {
             document.getElementById("im1").src = "/lab4/img/pet sleep.jpg";
-
         }
     </script>
 
