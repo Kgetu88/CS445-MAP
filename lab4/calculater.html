@@ -10,22 +10,31 @@
 
 <body>
 
-    <form id="form" action="#">
-        First Value
-        <input type="number" id="firstValue" value=" " /><br></br>
-        Second Value
-        <input type="number" id="secondValue" value=" " /><br></br>
+    <form id="calcform" action=" ">
+        <label for="firstValue"> First input:
+            <input required type="number" id="firstValue" value="" /></label><br></br>
+        <label for="secondValue"> Second Value:
+            <input required type="number" id="secondValue" value="" /></label><br></br>
+        <label for="thirdValue"> Result:
+            <input type="number" id="thirdValue" value="" /><br></br>
 
-        <input type="submit" value="submit" />
+            <input type="submit" value="submit" />
     </form>
     <script>
-        document.getElementById("form").onsubmit = function () {
-            let input1 = +document.getElementById("firstValue").value;
-            let input2 = +document.getElementById("secondValue").value;
+        window.onload = function () {
 
-            document.getElementById("secondValue").value = input2 + input1;
+            document.getElementById("calcform").addEventListener("submit", function (event) {
+                event.preventDefault();
+                let input1 = parseInt(document.getElementById("firstValue").value);
+                let input2 = parseInt(document.getElementById("secondValue").value);
 
+                document.getElementById("thirdValue").value = input2 + input1;
+
+
+
+            });
         }
+
     </script>
 </body>
 

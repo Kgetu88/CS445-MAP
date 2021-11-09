@@ -12,19 +12,49 @@
 
 <body>
 
-    <img id="im1" src="/lab4/img/" width="200px" alt="none">
-    <button id="up">Swap</button>
+    <!-- <img id="im1" src="/lab4/img/" width="200px" alt="none "> -->
+    <img id="im2" src="/lab4/img/pet2.jpg" width="200px" alt="none ">
+    <img id="im3" src="/lab4/img/pets.jpg" width="200px" alt="none ">
+    <button id="up">Swap</button><br>
 
     </div>
+    <label for="first">FirstText</label>
+    <input type="text" id="first" value="text1"></input><br>
+    <label for="second">SecondText</label>
+    <input type="text" id="second" value="text2 "></input>
+    <button id="up2">Swap2</button>
     <script>
 
-        let swapup = document.getElementById("up");
-        let swapdown = document.getElementById("down");
-        swapup.onmouseover = function () {
-            document.getElementById("im1").src = "/lab4/img/pet2.jpg";
-        }
-        swapup.onmouseout = function () {
-            document.getElementById("im1").src = "/lab4/img/pet sleep.jpg";
+        // let swapup = document.getElementById("up");
+        // swapup.onmouseover = function () {
+        //     document.getElementById("im1").src = "/lab4/img/pet2.jpg";
+        // }
+        // swapup.onmouseout = function () {
+        //     document.getElementById("im1").src = "/lab4/img/pet sleep.jpg";
+        // }
+
+        let eventlist = document.getElementById("up");
+        eventlist.addEventListener("click", function (event) {
+            let picture2 = document.getElementById("im2");
+            let picture3 = document.getElementById("im3");
+            let temp = picture2.src;
+            picture2.src = picture3.src;
+            picture3.src = temp;
+
+        });
+
+
+
+
+
+
+        document.getElementById("up2").onclick = function () {
+            let ftext = document.getElementById("first");
+            let stext = document.getElementById("second");
+            let temp = ftext.value;
+            ftext.value = stext.value;
+            stext.value = temp;
+
         }
     </script>
 

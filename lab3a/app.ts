@@ -14,7 +14,7 @@ let tupleform = function (numbers: number[]): [number[], number] {
 }
 
 //aray form
-function calculateAverage(array: number[]) {
+function calculateAverage(array: number[]): any {
     let sum: number = 0;
     for (let element of array) {
         sum += element;

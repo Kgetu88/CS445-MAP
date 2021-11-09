@@ -9,7 +9,40 @@
 </head>
 
 <body>
-    <h1>This is the first work</h1>
+    <img id="img" src="/lab4/img/pet2.jpg" width="200px" alt="no">
+    <button id="hide">Hide the image</button>
+    <button id="show">show the image</button>
+    <h3 id="text">Mouse over</h3>
+
+
+    <script>
+        let image = document.getElementById("img");
+        let hide = document.getElementById("hide");
+        let show = document.getElementById("show");
+        let text = document.getElementById("text");
+
+        hide.onclick = function () {
+            image.style.display = "none";
+
+        }
+        show.onclick = function () {
+            image.style.display = "block";
+
+        }
+        // show.ondblclick = function () {
+        //     image.style.display = "block";
+
+        // }
+
+        text.onmouseover = function () {
+            text.innerHTML = "whoops";
+
+        }
+        text.onmouseout = function () {
+            text.innerHTML = "mouse Over";
+
+        }
+    </script>
 </body>
 
 </html>
